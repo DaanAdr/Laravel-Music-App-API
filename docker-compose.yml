@@ -1,0 +1,15 @@
+name: musicapp
+
+services:
+  project-database:
+    container_name: MusicDB
+    image: "postgres:latest"
+    ports:
+      - 5432:5432
+    volumes:
+      - ./Music-DB/data/:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: musicDB
+    restart: unless-stopped
