@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\GenreController;
 
 Route::get('/status', function(){
     $base = config('app.url');
@@ -10,3 +11,4 @@ Route::get('/status', function(){
 });
 
 Route::resource('/v1/artist', ArtistController::class);
+Route::resource('/v1/genre', GenreController::class);
