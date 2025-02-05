@@ -21,8 +21,7 @@ class ArtistController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'name' => 'required|regex:/^[\p{L}]+$/u', // This regex allows only letters
+            'name' => 'required|regex:/^[\p{L} ]+$/u', // This regex allows letters and spaces
         ]);
     
         return Artist::create($request->all());
