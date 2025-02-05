@@ -30,4 +30,5 @@ Homestead.json
 auth.json
 
 
-/Book-DB
+# Exclude database persistence folder
+/Music-DB
