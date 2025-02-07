@@ -24,7 +24,7 @@ class StoreSongController extends Controller
             'name' => 'required|regex:/^[\p{L} ]+$/u', // This regex allows letters and spaces
             'artist_id' => 'required|exists:artists,id|regex:/^[0-9]+$/', // This regex allows only numbers
             'genre_id' => ['required', 'exists:genres,id', 'regex:/^[0-9]+$/'],
-            'feature_id' => 'nullable|exists:features,id'
+            'feature_id' => 'nullable|exists:artists,id'
         ]);
     }
 }
