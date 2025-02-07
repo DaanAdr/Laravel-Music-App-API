@@ -4,6 +4,7 @@ namespace App\Http\Controllers\SongControllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Song;
+use App\Services\SongServices\GetSongService;
 use Illuminate\Http\Request;
 
 class SongController extends Controller
@@ -13,7 +14,9 @@ class SongController extends Controller
      */
     public function index()
     {
-        return Song::with('artist')->with('genre')->with('feature')->get();
+        $service = new GetSongService();
+        $songs = $service->GetAllSongs();
+        return $songs;
     }
 
     /**
