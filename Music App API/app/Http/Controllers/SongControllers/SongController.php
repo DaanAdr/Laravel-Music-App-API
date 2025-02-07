@@ -13,7 +13,7 @@ class SongController extends Controller
      */
     public function index()
     {
-        return Song::with('artist')->get();
+        return Song::with('artist')->with('genre')->with('feature')->get();
     }
 
     /**
@@ -21,7 +21,7 @@ class SongController extends Controller
      */
     public function show(string $id)
     {
-        return Song::find($id);
+        return Song::with('artist')->with('genre')->with('feature')->find($id);
     }
 
     /**

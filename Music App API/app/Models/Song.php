@@ -12,4 +12,14 @@ class Song extends Model
     {
         return $this->belongsTo(Artist::class);
     }
+
+    public function genre()
+    {
+        return $this->belongsTo(Genre::class);
+    }
+
+    public function feature()
+    {
+        return $this->belongsTo(Artist::class, 'feature_id');
+    }
 }
