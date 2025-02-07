@@ -13,7 +13,7 @@ class SongController extends Controller
      */
     public function index()
     {
-        return Song::all();
+        return Song::with('artist')->get();
     }
 
     /**
