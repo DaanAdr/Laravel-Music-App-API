@@ -12,9 +12,9 @@ Route::get('/status', function(){
     return "The api is alive on $base:8000";
 });
 
-Route::resource('/v1/artist', ArtistController::class);
-Route::resource('/v1/genre', GenreController::class);
+Route::apiresource('/v1/artist', ArtistController::class);
+Route::apiresource('/v1/genre', GenreController::class);
 
 #Attempt at a single action controller for the store function
-Route::resource('/v1/song', SongController::class)->except("store");
+Route::apiresource('/v1/song', SongController::class)->except("store");
 Route::post('/v1/song', StoreSongController::class);
